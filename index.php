@@ -16,6 +16,7 @@
 <?php if ( $ig->hasUserAccessToken ) : ?>
 	<h4>IG Info</h4>
 	<hr />
+	<?php $user = $ig->getUserAccessToken(); ?>
 	<?php $user = $ig->getUser(); ?>
 	<pre>
 		<?php print_r( $user ); ?>
