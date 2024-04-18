@@ -1,5 +1,5 @@
 <?php
-	require_once( 'instagram_basic_display_api.php' );
+	require_once( 'src/instagram_basic_display_api.php' );
 
 	$accessToken = 'ACCESS-TOKEN';
 
