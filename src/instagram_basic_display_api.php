@@ -48,7 +48,11 @@
 		}
 
 		private function _setUserInstagramAccessToken( $params ) {
-			if ( $params['get_code'] ) { // we have an access token
+			if ( $params['access_token'] ) { // we have an access token
+				$this->_userAccessToken = $params['access_token'];
+				$this->hasUserAccessToken = true;
+
+			} elseif ( $params['get_code'] ) { // try and get an access token
 				$userAccessTokenResponse = $this->_getUserAccessToken();
 				$this->_userAccessToken = $userAccessTokenResponse['access_token'];
 				$this->hasUserAccessToken = true;
@@ -90,6 +94,20 @@
 			$response = $this->_makeApiCall( $params );
 			return $response;
 		}
+
+		public function getUser() {
+			$params = array(
+				'endpoint_url' => $this->_graphBaseUrl . 'me',
+				'type' => 'GET',
+				'url_params' => array(
+					'fields' => 'id,username,media_count,account_type',
+				)
+			);
+
+			$response = $this->_makeApiCall( $params );
+			return $response;
+		}
+
 
 		private function _makeApiCall( $params ) {
 			$ch = curl_init();
