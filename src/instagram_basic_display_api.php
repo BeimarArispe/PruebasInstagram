@@ -30,7 +30,7 @@
 
 		private function _setAuthorizationUrl() {
 			$getVars = array( 
-				'app_id' => $this->_appId,
+				'client_id' => $this->_appId,
 				'redirect_uri' => $this->_redirectUrl,
 				'scope' => 'user_profile,user_media',
 				'response_type' => 'code'
@@ -53,8 +53,8 @@
 				'endpoint_url' => $this->_apiBaseUrl . 'oauth/access_token',
 				'type' => 'POST',
 				'url_params' => array(
-					'app_id' => $this->_appId,
-					'app_secret' => $this->_appSecret,
+					'client_id' => $this->_appId,
+					'client_secret' => $this->_appSecret,
 					'grant_type' => 'authorization_code',
 					'redirect_uri' => $this->_redirectUrl,
 					'code' => $this->_getCode
