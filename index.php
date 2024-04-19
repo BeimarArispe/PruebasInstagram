@@ -10,7 +10,10 @@
 <hr />
 <?php if ( $ig->hasUserAccessToken) : ?>
     <h4>Info IG</h4>
+    <h6>Token access</h6>
     <?php echo $ig->getUserAccessToken(); ?>
+    <h6>Exprira en:</h6>
+    <?php echo ceil($ig->getUserAccessTokenExpires()/86400); ?> dias
 <?php else : ?>
     <a href="<?php echo $ig->authorizationUrl; ?>">
         Iniciar con Intagram
