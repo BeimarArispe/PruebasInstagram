@@ -16,7 +16,7 @@
     <h6>Token access</h6>
     <?php echo $ig->getUserAccessToken(); ?>
     <h6>Exprira en:</h6>
-    <?php echo ceil($ig->getUserAccessTokenExpires()/86400); ?> dias
+    <?php echo ceil($ig->getUserAccessTokenExpires()); ?> min
 
     <hr />
 	   <?php $user = $ig->getUser(); ?>
