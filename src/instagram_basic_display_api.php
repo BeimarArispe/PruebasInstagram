@@ -13,7 +13,8 @@
 
 		public $hasUserAccessToken = false;
 		public $authorizationUrl = '';
-	
+	    public $userId ='';
+
 
 		function __construct( $params ) {
 			// save instagram code
@@ -51,12 +52,15 @@
 			if ( $params['access_token'] ) { // we have an access token
 				$this->_userAccessToken = $params['access_token'];
 				$this->hasUserAccessToken = true;
+				$this->userId = $params['user_id'];
 
 			} elseif ( $params['get_code'] ) { // try and get an access token
 				$userAccessTokenResponse = $this->_getUserAccessToken();
 				$this->_userAccessToken = $userAccessTokenResponse['access_token'];
 				$this->hasUserAccessToken = true;
-                 
+                $this->userId = $userAccessTokenResponse['user_id'];
+
+			
 				// Get long lived access token
 				$longLivedAccessTokenResponse = $this->_getLongLivedUserAccessToken();
 				$this->_userAccessToken = $longLivedAccessTokenResponse['access_token'];
@@ -107,7 +111,19 @@
 			$response = $this->_makeApiCall( $params );
 			return $response;
 		}
+		
+		public function getUsersMedia() {
+			$params = array(
+				'endpoint_url' => $this->_graphBaseUrl . $this->userId . '/media',
+				'type' => 'GET',
+				'url_params' => array(
+					'fields' => 'id,caption,media_type,media_url',
+				)
+			);
 
+			$response = $this->_makeApiCall( $params );
+			return $response;
+		}
 
 		private function _makeApiCall( $params ) {
 			$ch = curl_init();
