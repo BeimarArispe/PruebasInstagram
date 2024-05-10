@@ -1,11 +1,11 @@
 <?php
 	require_once( 'src/instagram_basic_display_api.php' );
-  $accessToken = 'AQCy-4GkbNsHdTLFDxs92dL2AjwcX5ykP0htO1ViltV8rJUNSJSfSkaDwuPnR3jofnCfgk9OX3t00fKTatDqOzhpUjSlz7HPlY9t22O0d-LYjPcuiaPE8iZro8nTRv5ve2cn_yopFggQGkcz27BVLoGNEe5ix0j3IclRXPs0yx8l7R0Jz0Mxz3aOm2FEbe1FK3knZhLoVN0B_r2kElRkU3gApRMc0IKlwGDvVtqHBnGOEQ';
+  $accessToken = 'AQDrdR52dW52vb_CxqV3zAoJlPdCKzXKKzpSI5I4KmIyqdgCboNKRK3TEGkKbOHZ6lp7M-YidXDyfMT8al-lN1jD-aYYy5SS2gkHtduJt41Rmlqieg_D9ytw6DQ-yIjBUR_ERTmks9wxaVchuD7MxGBYAMg6raJKuOavxfgL-w4-_VLiJV6q1ZMk7j5i4lXdT_GR51s-7cSKyvA3wr1kEgUokOPwDWad09K-pHbPCDdFaQ';
 
      $params = array(
       'get_code' => isset( $_GET['code'] ) ? $_GET['code'] : '',
-      'access_token' => $accessToken,
-      'user_id' => '7503489786433392'
+      //'access_token' => $accessToken,
+      //'user_id' => '7503489786433392'
      );
    $ig = new instagram_basic_display_api( $params );
 ?>

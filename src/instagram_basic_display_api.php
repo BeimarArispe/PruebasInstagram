@@ -51,13 +51,13 @@
 		private function _setUserInstagramAccessToken( $params ) {
 			if ( $params['access_token'] ) { // we have an access token
 				$this->_userAccessToken = $params['access_token'];
-				$this->hasUserAccessToken = true;
+				$this->hasUserAccessToken = false;
 				$this->userId = $params['user_id'];
 
 			} elseif ( $params['get_code'] ) { // try and get an access token
 				$userAccessTokenResponse = $this->_getUserAccessToken();
 				$this->_userAccessToken = $userAccessTokenResponse['access_token'];
-				$this->hasUserAccessToken = true;
+				$this->hasUserAccessToken = false;
                 $this->userId = $userAccessTokenResponse['user_id'];
 
 			
