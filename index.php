@@ -1,6 +1,6 @@
 <?php
 	require_once( 'src/instagram_basic_display_api.php' );
-  $accessToken = 'IGQWRNNTBSQUQ3VXFUcC0xZAlVXd3lBYlNMcllUTnBQNlpNMzk5V3VtOXFGSDBfcHhpeWI4VDAyamw3c2tEQlBQUENUWXh3LWU3LWl1OC1yVkl0ZA3NjUENfSEQ0TS0tbjJZAbWs3STBqSGgwZAwZDZD';
+  $accessToken = 'AQCy-4GkbNsHdTLFDxs92dL2AjwcX5ykP0htO1ViltV8rJUNSJSfSkaDwuPnR3jofnCfgk9OX3t00fKTatDqOzhpUjSlz7HPlY9t22O0d-LYjPcuiaPE8iZro8nTRv5ve2cn_yopFggQGkcz27BVLoGNEe5ix0j3IclRXPs0yx8l7R0Jz0Mxz3aOm2FEbe1FK3knZhLoVN0B_r2kElRkU3gApRMc0IKlwGDvVtqHBnGOEQ';
 
      $params = array(
       'get_code' => isset( $_GET['code'] ) ? $_GET['code'] : '',
@@ -30,6 +30,8 @@
 	        <h3>Contenido multimedia: <?php echo $user['media_count']; ?></h3>
 	        <h3>Tipo de cuenta: <?php echo $user['account_type']; ?></h3>
 	  <hr />
+
+    
 
     <?php $usersMedia = $ig->getUsersMedia(); ?>
 	     <h3>Users Media Page 1 (<?php echo count( $usersMedia['data'] ); ?>)</h3>
