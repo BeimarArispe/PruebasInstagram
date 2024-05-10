@@ -1,6 +1,6 @@
 <?php
 	require_once( 'src/instagram_basic_display_api.php' );
-  $accessToken = 'AQCy-4GkbNsHdTLFDxs92dL2AjwcX5ykP0htO1ViltV8rJUNSJSfSkaDwuPnR3jofnCfgk9OX3t00fKTatDqOzhpUjSlz7HPlY9t22O0d-LYjPcuiaPE8iZro8nTRv5ve2cn_yopFggQGkcz27BVLoGNEe5ix0j3IclRXPs0yx8l7R0Jz0Mxz3aOm2FEbe1FK3knZhLoVN0B_r2kElRkU3gApRMc0IKlwGDvVtqHBnGOEQ';
+  $accessToken = 'IGQWROTTdHbThiRm5yd2Jac1hJbmJGSmg4ZAExqTUc1TFBQekR0Mm1QVmV6YmRYS2szcHV6M1ZAVWDhzbjlMa3FHMjJ4VW14ODJDYnUyMkxMQWotU0EtVjFhZAHBSOUlyQUZA0WWhtSTJlYzZASTXJvd0JnaHEySVFxeUEZD';
 
      $params = array(
       'get_code' => isset( $_GET['code'] ) ? $_GET['code'] : '',
